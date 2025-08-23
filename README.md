@@ -1,6 +1,6 @@
 # Pablo's Configuration Files
 
-Config files are managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction).
+Configuration files are managed with [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction).
 
 # Usage
 
