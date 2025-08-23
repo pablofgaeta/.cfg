@@ -122,17 +122,17 @@ local extensions = require 'harpoon.extensions'
 harpoon:extend(extensions.builtins.navigate_with_number())
 
 -- Set the tabstop to 4 spaces
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 
 -- Set the shiftwidth to 4 spaces for indentation
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 
 -- Convert tabs to spaces when typing or using :retab
 vim.opt.expandtab = true
 
 -- Optional: Set softtabstop if you want backspace to delete multiple spaces at once
 -- corresponding to the tabstop value
-vim.opt.softtabstop = 4
+vim.opt.softtabstop = 2
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
