@@ -14,4 +14,4 @@ Ensure that `stow` is installed on the target system.
 
 Create symlinks to all stow packages with: `make stow`. This works because the default stow directory is the current directory and the default target directory is the stow's parent.
 
-If this repo was cloned anywhere other than the home directory or you want to customize stow arguments, you can run individual `stow [options] [action flag] package …` commands ([documentation](https://www.gnu.org/software/stow/manual/stow.html#Invoking-Stow)).
+If this repo was cloned anywhere other than the home directory or you want to customize stow arguments, you can run individual `stow` commands ([documentation](https://www.gnu.org/software/stow/manual/stow.html#Invoking-Stow)).
