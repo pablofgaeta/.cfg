@@ -59,7 +59,7 @@ export PATH=$PATH:"/Applications/Racket/bin"
 export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 # brew / build tools
-if [-e "/opt/homebrew"]; then
+if [ -e "/opt/homebrew" ]; then
     PATH="/opt/homebrew/opt/libtool/libexec/gnubin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi

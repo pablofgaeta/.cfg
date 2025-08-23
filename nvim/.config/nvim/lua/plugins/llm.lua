@@ -1,65 +1,42 @@
 return {
   {
-    'yetone/avante.nvim',
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = 'make', -- ⚠️ must add this line! ! !
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-    event = 'VeryLazy',
-    version = false, -- Never set this value to "*"! Never!
+    'huggingface/llm.nvim',
     opts = {
-      provider = 'ollama',
-      providers = {
-        ollama = {
-          endpoint = 'http://localhost:11434',
-          model = 'gemma3:1b',
+      model = 'codellama:7b',
+      url = 'http://localhost:11434', -- llm-ls uses "/api/generate"
+      backend = 'ollama',
+      -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+      request_body = {
+        -- Modelfile options for the model you use
+        options = {
+          temperature = 0.2,
+          top_p = 0.95,
         },
       },
-      auto_suggestions_provider = 'ollama',
-      behavior = {
-        auto_suggestions = true,
+      -- set this if the model supports fill in the middle
+      fim = {
+        enabled = true,
+        prefix = '<fim_prefix>',
+        middle = '<fim_middle>',
+        suffix = '<fim_suffix>',
       },
-      suggestion = {
-        debounce = 600,
-        throttle = 600,
+      debounce_ms = 600,
+      accept_keymap = '<Tab>',
+      dismiss_keymap = '<S-Tab>',
+      tls_skip_verify_insecure = false,
+      -- llm-ls configuration, cf llm-ls section
+      lsp = {
+        bin_path = nil,
+        host = nil,
+        port = nil,
+        cmd_env = nil, -- or { LLM_LOG_LEVEL = "DEBUG" } to set the log level of llm-ls
+        version = '0.5.3',
       },
-    },
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      --- The below dependencies are optional,
-      'echasnovski/mini.pick', -- for file_selector provider mini.pick
-      'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
-      'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
-      'ibhagwan/fzf-lua', -- for file_selector provider fzf
-      'stevearc/dressing.nvim', -- for input provider dressing
-      'folke/snacks.nvim', -- for input provider snacks
-      'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
-      {
-        -- support for image pasting
-        'HakonHarnes/img-clip.nvim',
-        event = 'VeryLazy',
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
-      },
-      {
-        -- Make sure to set this up properly if you have lazy=true
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-          file_types = { 'markdown', 'Avante' },
-        },
-        ft = { 'markdown', 'Avante' },
-      },
+      tokenizer = nil, -- cf Tokenizer paragraph
+      context_window = 1024, -- max number of tokens for the context window
+      enable_suggestions_on_startup = true,
+      enable_suggestions_on_files = '*', -- pattern matching syntax to enable suggestions on specific files, either a string or a list of strings
+      disable_url_path_completion = false, -- cf Backend
     },
   },
 }
