@@ -1,0 +1,14 @@
+[pull]
+    rebase = true
+[user]
+    name = Pablo Gaeta
+    email = pablofgaeta@gmail.com
+[core]
+    editor = nvim
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge --skip -- %f
+    process = git-lfs filter-process --skip
+    required = true
+[push]
+    autoSetupRemote = true
