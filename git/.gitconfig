@@ -1,14 +1,66 @@
-[pull]
-    rebase = true
+# Default global user. Overriden in specific workspaces
 [user]
-    name = Pablo Gaeta
-    email = pablofgaeta@gmail.com
+  name = Pablo Gaeta
+  email = pablofgaeta@gmail.com
+
+# Default core. Overriden in specific workspaces
 [core]
-    editor = nvim
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge --skip -- %f
-    process = git-lfs filter-process --skip
-    required = true
+  excludesfile = ~/.gitignore
+  ignorecase = false
+  editor = nvim
+  sshCommand = "ssh -i ~/.ssh/personal"
+
+[includeIf "gitdir:~/workspace/ado/jbh/"]
+path = ~/workspace/.jbh.gitconfig
+
+[includeIf "gitdir:~/workspace/gerrit/"]
+path = ~/workspace/.google.gitconfig
+
+[includeIf "gitdir:~/workspace/gh/pablofgaeta/"]
+path = ~/workspace/.personal.gitconfig
+
+[includeIf "gitdir:~/workspace/gh/pcln/"]
+path = ~/work/pcln/.pcln.gitconfig
+
+[includeIf "gitdir:~/workspace/gl/google-pso/"]
+path = ~/workspace/.google.gitconfig
+
+[includeIf "gitdir:~/workspace/gl/novascotia/"]
+path = ~/workspace/.nsh.gitconfig
+
+[includeIf "gitdir:~/workspace/ssm/"]
+path = ~/workspace/.google.gitconfig
+
+[alias]
+  count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
+
+  cl = "!f() { \
+          git push origin HEAD:refs/for/${1:-main}; \
+        }; f"
+
+[url "sso://user/pablogaeta/"]
+  insteadof = me:
+
+[init]
+  defaultBranch = main
+
+[credential "https://source.developers.google.com"]
+  helper = gcloud.sh
+
+[http]
+  cookiefile = /Users/pablogaeta/.gitcookies
+
 [push]
-    autoSetupRemote = true
+  autoSetupRemote = true
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[pull]
+  rebase = true
+
+[diff]
+  algorithm = histogram

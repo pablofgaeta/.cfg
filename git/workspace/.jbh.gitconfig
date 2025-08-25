@@ -1,0 +1,6 @@
+[user]
+name = Pablo Gaeta
+email = pablo.gaeta@jbhunt.com
+
+[core]
+sshCommand = "ssh -i ~/.ssh/jbh"

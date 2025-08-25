@@ -1,0 +1,6 @@
+[user]
+name = Pablo Gaeta
+email = pablofgaeta@gmail.com
+
+[core]
+sshCommand = "ssh -i ~/.ssh/personal"

@@ -1,0 +1,6 @@
+[user]
+name = Pablo Gaeta
+email = pablogaeta@google.com
+
+[core]
+sshCommand = "ssh -i ~/.ssh/google"

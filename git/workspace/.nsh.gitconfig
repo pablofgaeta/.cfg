@@ -1,0 +1,6 @@
+[user]
+name = Pablo Gaeta
+email = vengaetap@nshealth.ca
+
+[core]
+sshCommand = "ssh -i ~/.ssh/nsh"
