@@ -64,3 +64,6 @@ path = ~/workspace/.google.gitconfig
 
 [diff]
   algorithm = histogram
+
+[pager]
+	branch = false
