@@ -163,6 +163,9 @@ return {
       cssls = {},
       yamlls = {},
       rust_analyzer = {},
+      dockerls = {},
+      prettier = {},
+      terraformls = {},
 
       lua_ls = {
         settings = {
