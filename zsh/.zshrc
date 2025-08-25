@@ -24,6 +24,7 @@ alias personal="cd $HOME/workspace/gh/pablofgaeta"
 alias livecrates="cargo watch -s 'cargo doc && browser-sync start --ss target/doc -s target/doc --directory --no-open'"
 alias ap="cd $HOME/workspace/gerrit/pso-internal/agent-packs"
 alias cloudtop="ssh pablogaeta@pablogaeta.c.googlers.com"
+alias config="cd $HOME/.cfg/ && nvim && cd -"
 
 # prevent creation of .lesshst
 export LESSHISTFILE=-
