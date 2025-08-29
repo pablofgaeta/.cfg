@@ -133,3 +133,6 @@ vim.opt.expandtab = true
 -- Optional: Set softtabstop if you want backspace to delete multiple spaces at once
 -- corresponding to the tabstop value
 vim.opt.softtabstop = 2
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true

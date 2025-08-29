@@ -91,3 +91,10 @@ export PATH=$PATH:/Applications/SuperCollider.app/Contents/MacOS
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history 1|sed '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# bun completions
+[ -s "/Users/pablogaeta/.bun/_bun" ] && source "/Users/pablogaeta/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
