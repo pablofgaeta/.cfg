@@ -28,8 +28,11 @@ path = ~/workspace/.google.gitconfig
 [includeIf "gitdir:~/workspace/gl/novascotia/"]
 path = ~/workspace/.nsh.gitconfig
 
-[includeIf "gitdir:~/workspace/ssm/"]
-path = ~/workspace/.google.gitconfig
+[includeIf "gitdir:~/workspace/ssm/wec/"]
+path = ~/workspace/.wec.gitconfig
+
+[includeIf "gitdir:~/workspace/ssm/disney/"]
+path = ~/workspace/.disney.gitconfig
 
 [alias]
   count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"

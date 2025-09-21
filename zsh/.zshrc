@@ -98,3 +98,17 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
+
+# Start ssh-agent and register SSH keys
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+[[ ! -f ~/.ssh/personal ]] || /usr/bin/ssh-add ~/.ssh/personal > /dev/null 2>&1
+[[ ! -f ~/.ssh/disney ]] || /usr/bin/ssh-add ~/.ssh/disney > /dev/null 2>&1
+[[ ! -f ~/.ssh/wec ]] || /usr/bin/ssh-add ~/.ssh/wec > /dev/null 2>&1
+[[ ! -f ~/.ssh/google ]] || /usr/bin/ssh-add ~/.ssh/google > /dev/null 2>&1
+[[ ! -f ~/.ssh/jbh ]] || /usr/bin/ssh-add ~/.ssh/jbh > /dev/null 2>&1
+[[ ! -f ~/.ssh/nsh ]] || /usr/bin/ssh-add ~/.ssh/nsh > /dev/null 2>&1
+[[ ! -f ~/.ssh/pcln ]] || /usr/bin/ssh-add ~/.ssh/pcln > /dev/null 2>&1
