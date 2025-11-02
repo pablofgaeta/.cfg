@@ -112,3 +112,6 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 [[ ! -f ~/.ssh/jbh ]] || /usr/bin/ssh-add ~/.ssh/jbh > /dev/null 2>&1
 [[ ! -f ~/.ssh/nsh ]] || /usr/bin/ssh-add ~/.ssh/nsh > /dev/null 2>&1
 [[ ! -f ~/.ssh/pcln ]] || /usr/bin/ssh-add ~/.ssh/pcln > /dev/null 2>&1
+
+# LM Studio
+export PATH="$PATH:$HOME/.lmstudio/bin"
