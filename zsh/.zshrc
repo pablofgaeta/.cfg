@@ -25,6 +25,7 @@ alias livecrates="cargo watch -s 'cargo doc && browser-sync start --ss target/do
 alias ap="cd $HOME/workspace/gerrit/pso-internal/agent-packs"
 alias cloudtop="ssh pablogaeta@pablogaeta.c.googlers.com"
 alias config="cd $HOME/.cfg/ && nvim && cd -"
+alias safergcp=/google/bin/releases/safer-gcp/tools/safergcp
 
 # prevent creation of .lesshst
 export LESSHISTFILE=-
@@ -98,6 +99,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+<<<<<<< HEAD
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
@@ -115,3 +117,4 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 
 # LM Studio
 export PATH="$PATH:$HOME/.lmstudio/bin"
+export PATH="/usr/lib/adcs/symlinks:$PATH"
