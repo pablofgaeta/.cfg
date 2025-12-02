@@ -1,6 +1,7 @@
 return {
   {
     'MagicDuck/grug-far.nvim',
+    cond = not vim.g.vscode,
     -- Note (lazy loading): grug-far.lua defers all it's requires so it's lazy by default
     -- additional lazy config to defer loading is not really needed...
     config = function()
