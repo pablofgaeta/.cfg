@@ -120,3 +120,4 @@ export PATH="/usr/lib/adcs/symlinks:$PATH"
 
 # Added by Jetski
 export PATH="/Users/pablogaeta/.jetski/jetski/bin:$PATH"
+. "$HOME/.local/bin/env"
