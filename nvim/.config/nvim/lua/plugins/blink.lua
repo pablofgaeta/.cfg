@@ -2,6 +2,7 @@ return { -- Autocompletion
   'saghen/blink.cmp',
   event = 'VimEnter',
   version = '1.*',
+  cond = not vim.g.vscode,
   dependencies = {
     -- Snippet Engine
     {
