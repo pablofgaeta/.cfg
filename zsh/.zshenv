@@ -10,3 +10,6 @@ for file in "${files[@]}"; do
         echo "Skipping source for: $file"
     fi
 done
+
+# uv
+export PATH="/Users/pablogaeta/.local/bin:$PATH"

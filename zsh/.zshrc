@@ -99,7 +99,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-<<<<<<< HEAD
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
@@ -118,3 +117,6 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 # LM Studio
 export PATH="$PATH:$HOME/.lmstudio/bin"
 export PATH="/usr/lib/adcs/symlinks:$PATH"
+
+# Added by Jetski
+export PATH="/Users/pablogaeta/.jetski/jetski/bin:$PATH"
