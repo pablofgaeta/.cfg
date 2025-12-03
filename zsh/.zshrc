@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+OS_TYPE=$(uname)
+
 # custom aliases
 alias ep="nvim $HOME/.zshrc"
 alias sp=". $HOME/.zshrc"
@@ -68,16 +70,6 @@ if [ -e "/opt/homebrew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
-# go setup
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 # powerlevel setup
 [[ ! -f ~/.p10k.zsh ]] || . ~/.p10k.zsh
 
@@ -120,4 +112,16 @@ export PATH="/usr/lib/adcs/symlinks:$PATH"
 
 # Added by Jetski
 export PATH="/Users/pablogaeta/.jetski/jetski/bin:$PATH"
-. "$HOME/.local/bin/env"
+
+# Additional binary components for gcloud CLI
+if [[ "$OS_TYPE" == "Darwin" ]]; then
+  export PATH=$HOMEBREW_PREFIX/share/google-cloud-sdk/bin:"$PATH"
+elif [[ "$OS_TYPE" == "Linux" ]]; then
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+  # The next line enables shell command completion for gcloud.
+  if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+fi
+
+[[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env" > /dev/null 2>&1
