@@ -1,4 +1,8 @@
-.PHONY: stow
+.PHONY: bundle stow
+
+bundle:
+	@brew bundle
+
 stow:
 	@stow stow
 	@stow gemini
