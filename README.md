@@ -18,6 +18,8 @@ Step 5. Install system dependencies: `make bundle`
 
 Step 6. Create symlinks to all stow packages: `make stow`.
 
+Step 7. Update default shell: `chsh -s $(which zsh)`
+
 **Note**: The symlinks work correctly because the default stow directory is the current directory and the default target directory is the stow's parent. If this repo was cloned anywhere other than the home directory or you want to customize stow arguments, you can run individual `stow` commands ([documentation](https://www.gnu.org/software/stow/manual/stow.html#Invoking-Stow)).
 
 # Usage (Linux)
