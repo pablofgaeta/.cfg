@@ -125,3 +125,5 @@ elif [[ "$OS_TYPE" == "Linux" ]]; then
 fi
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env" > /dev/null 2>&1
+
+# source /usr/share/cachyos-zsh-config/cachyos-config.zsh
