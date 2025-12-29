@@ -1,14 +1,14 @@
 # Default global user. Overriden in specific workspaces
 [user]
   name = Pablo Gaeta
-  email = pablogaeta@google.com
+  email = pablofgaeta@gmail.com
 
 # Default core. Overriden in specific workspaces
 [core]
   excludesfile = ~/.gitignore
   ignorecase = false
   editor = nvim
-  sshCommand = "ssh -i ~/.ssh/google"
+  sshCommand = "ssh -i ~/.ssh/personal"
 
 [includeIf "gitdir:~/.cfg"]
 path = ~/workspace/.personal.gitconfig
