@@ -10,6 +10,9 @@
   editor = nvim
   sshCommand = "ssh -i ~/.ssh/google"
 
+[includeIf "gitdir:~/.cfg"]
+path = ~/workspace/.personal.gitconfig
+
 [includeIf "gitdir:~/workspace/ado/jbh/"]
 path = ~/workspace/.jbh.gitconfig
 
