@@ -22,6 +22,29 @@ Step 7. Update default shell: `chsh -s $(which zsh)`
 
 **Note**: The symlinks work correctly because the default stow directory is the current directory and the default target directory is the stow's parent. If this repo was cloned anywhere other than the home directory or you want to customize stow arguments, you can run individual `stow` commands ([documentation](https://www.gnu.org/software/stow/manual/stow.html#Invoking-Stow)).
 
-# Usage (Linux)
+# Usage (Linux - CachyOS)
 
-TODO
+System dependencies are managed by [`yay`](https://github.com/Jguer/yay).
+
+Step 1. Create and register SSH keys as needed with `ssh-keygen -t ed25519 -C "example@email.com" -f ~/.ssh/example`. Check out [git/workspace/](./git/workspace/) for reference of expected git configurations.
+
+Step 2. Clone the repo in the home directory: `git clone git@github.com:pablofgaeta/.cfg.git ~/.cfg`
+
+Step 3. Navigate to the the cloned repo directory: `cd ~/.cfg`
+
+Step 4. Install yay
+
+```bash
+sudo pacman -S --needed git base-devel
+
+mkdir -p ~/workspace/aur
+git clone https://aur.archlinux.org/yay.git ~/workspace/aur/yay
+
+cd yay && makepkg -si
+```
+
+Step 5. Install system dependencies: `make yay`
+
+Step 6. Create symlinks to all stow packages: `make stow`.
+
+<!-- Step 7. Update default shell: `chsh -s $(which zsh)` -->

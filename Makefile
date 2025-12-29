@@ -1,8 +1,8 @@
 .PHONY: bundle stow yay
 
 yay:
-	@yay -S $(shell cat yay.txt)
-	@sudo pacman $(shell cat yay.txt | pacman -Qeq - | xargs)
+	@yay -S $(shell cat yay/packages.txt)
+	@sudo pacman $(shell cat yay/packages.txt | pacman -Qeq - | xargs)
 
 bundle:
 	@brew bundle
