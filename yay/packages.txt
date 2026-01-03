@@ -18,3 +18,4 @@ tmux
 tree
 uv
 yq
+hyprlauncher
